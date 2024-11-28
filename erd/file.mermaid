@@ -1,0 +1,64 @@
+erDiagram
+    USER ||--o{ SISWA : "memiliki"
+    USER ||--o{ GURU : "memiliki"
+    SISWA ||--o{ FACE_DATA : "memiliki"
+    SISWA ||--o{ ABSENSI : "melakukan"
+    SISWA }|--|| KELAS : "terdaftar"
+    KELAS ||--o{ JADWAL_PELAJARAN : "memiliki"
+    JADWAL_PELAJARAN ||--o{ ABSENSI : "mencatat"
+    GURU ||--o{ JADWAL_PELAJARAN : "mengajar"
+
+    USER {
+        int user_id PK
+        string username
+        string role
+        string password_hash
+    }
+
+    SISWA {
+        int siswa_id PK
+        int user_id FK
+        string nis
+        string nama
+        string kelas_id FK
+    }
+
+    FACE_DATA {
+        int face_data_id PK
+        int siswa_id FK
+        blob face_encoding
+        datetime tanggal_capture
+    }
+
+    KELAS {
+        int kelas_id PK
+        string nama_kelas
+        string tahun_ajaran
+    }
+
+    JADWAL_PELAJARAN {
+        int jadwal_id PK
+        int kelas_id FK
+        int guru_id FK
+        string mata_pelajaran
+        string hari
+        time jam_mulai
+        time jam_selesai
+    }
+
+    ABSENSI {
+        int absensi_id PK
+        int siswa_id FK
+        int jadwal_id FK
+        datetime waktu_absen
+        string status
+        float confidence_level
+    }
+
+    GURU {
+        int guru_id PK
+        int user_id FK
+        string nip
+        string nama
+        string mata_pelajaran
+    }

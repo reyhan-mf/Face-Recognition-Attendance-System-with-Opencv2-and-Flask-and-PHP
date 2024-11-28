@@ -1,0 +1,76 @@
+/* Tambahkan styling opsional jika diperlukan */
+.btn-disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .btn-active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+#color-test{
+  margin-bottom: 0;
+  margin-top: 12px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    /* Change this to your desired hover color */
+    cursor: pointer;
+}
+
+.badge-sakit{
+    background: #d12ac1;
+  }
+
+.divider {
+    height: 1px;
+    background-color: #e0e0e0; /* Light gray color */
+    margin: 1rem 0; /* Adjust the margin as needed */
+    border: none;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; /* Matches the header background color */
+    z-index: 10;
+  }
+  
+
+.scrollable-table {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+
+.avatar-img-table{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.scrollable-dropdown {
+    max-height: 200px;
+    /* Set the maximum height you want */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+@media (min-width: 985px) {
+
+  .main-header{
+    display: none;
+}
+
+.main-panel>.container {
+    margin-top: 0;
+}
+
+.col-jumlah{
+    justify-content: space-evenly;
+}
+
+}
